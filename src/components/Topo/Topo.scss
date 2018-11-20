@@ -1,0 +1,71 @@
+@import '../../css/_utilities/_imports';
+
+.topo {
+  background: transparent url('../../img/mobile/images-jpg/bg-topo.jpg') center center no-repeat;
+  background-size: cover;
+  min-height: pxToRem(540);
+  position: relative;
+  width: 100%;
+
+  &:before {
+    background-color: rgba($color-black, .3);
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  @media(min-width: pxToRem(568)) {
+    background-image: url('../../img/tablet/images-jpg/bg-topo.jpg');
+  }
+
+  @media(min-width: pxToRem(768)) {
+    min-height: pxToRem(700);
+  }
+
+  @media(min-width: pxToRem(1024)) {
+    background-image: url('../../img/desktop/images-jpg/bg-topo.jpg');
+  }
+}
+
+.call {
+  color: $color-white;
+  max-width: pxToRem(280);
+  margin: pxToRem(24) auto 0;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+
+  &_title {
+    color: $color-white;
+    display: inline-block;
+    font-size: pxToRem(30);
+    font-weight: 700;
+    line-height: pxToRem(32);
+    text-transform: uppercase;
+  }
+
+  &_subTitle {
+    font-size: pxToRem(18);
+    line-height: pxToRem(24);
+  }
+
+
+  @media(min-width: pxToRem(768)) {
+    max-width: pxToRem(480);
+    margin-top: pxToRem(148);
+
+    &_title {
+      font-size: pxToRem(52);
+      line-height: pxToRem(52);
+    }
+    &_subTitle {
+      font-size: pxToRem(24);
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import '../../css/_utilities/_imports';
+
+.boxA {
+  @include flexItens(null, null, 1 1 auto);
+  position: relative;
+
+  &_wrap {
+    border-radius: pxToRem(8);
+    line-height: 0;
+    min-height: pxToRem(240);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &_img {
+      bottom: 0;
+      -webkit-filter: contrast(.8);
+      filter: contrast(.8);
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      position: absolute;
+      right: 0;
+      width: 100%;
+    }
+  }
+
+  &_content {
+    color: $color-white;
+    bottom: 0;
+    left: 0;
+    padding: pxToRem(20);
+    position: absolute;
+    right: 0;
+    text-align: left;
+  }
+
+  &_btn {
+    background-color: $color-lightRed;
+    border-radius: pxToRem(40);
+    cursor: pointer;
+    display: inline-block;
+    font-size: pxToRem(12);
+    margin-bottom: pxToRem(20);
+    padding: pxToRem(6) pxToRem(12);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media(min-width: pxToRem(768)) {
+    &_wrap {
+      min-height: pxToRem(360);
+    }
+  }
+}

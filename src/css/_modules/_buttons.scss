@@ -1,0 +1,36 @@
+@import '../_utilities/_imports';
+
+.btn {
+  background-color: transparent;
+  border-radius: pxToRem(40);
+  border: none;
+  color: $color-white;
+  padding: pxToRem(8) pxToRem(16);
+
+  &--log,
+  &--call,
+  &--signUp {
+    @extend .btn;
+  }
+
+  &--log {
+    + .btn--signUp {
+      margin-left: pxToRem(8);
+    }
+  }
+
+  &--call {
+    background-color: $color-lightRed;
+    font-weight: 600;
+    margin-top: pxToRem(32);
+    min-width: pxToRem(232);
+
+    @media(min-width: pxToRem(768)) {
+      margin-top: pxToRem(32);
+    }
+  }
+
+  &--signUp {
+    border: pxToRem(2) solid $color-white;
+  }
+}

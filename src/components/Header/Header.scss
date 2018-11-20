@@ -1,0 +1,34 @@
+@import '../../css/_utilities/_imports';
+
+.header {
+  &_content {
+    @include flexContainer(flex, column, null, null, null, center);
+    max-width: pxToRem(1060);
+    margin: 0 auto;
+    padding-top: pxToRem(20);
+    position: relative;
+    z-index: 4;
+
+    &_title {
+      @include flexItens(3, null, null);
+      color: $color-white;
+      display: inline-block;
+      font-size: pxToRem(20);
+      font-weight: 700;
+      padding-top: pxToRem(90);
+      text-transform: uppercase;
+    }
+  }
+
+  @media(min-width: pxToRem(568)) {
+    &_content {
+      @include flexContainer(null, row, null, space-between, center, null);
+      padding: pxToRem(40) pxToRem(20) pxToRem(20);
+
+      &_title {
+        @include flexItens(0, null, null);
+        padding-top: 0;
+      }
+    }
+  }
+}

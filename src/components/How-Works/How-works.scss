@@ -1,0 +1,54 @@
+@import '../../css/_utilities/_imports';
+
+.howWorks {
+  &_title {
+    font-size: pxToRem(24);
+    font-weight: 700;
+    margin: pxToRem(32) 0 pxToRem(16);
+  }
+
+  &_grid {
+    margin: 0 auto;
+    max-width: pxToRem(300);
+
+    &_item {
+      margin-bottom: pxToRem(20);
+      width: 100%;
+
+      &--active {
+        @extend .howWorks_grid_item;
+      }
+    }
+  }
+
+  @media(max-width: pxToRem(767)) {
+    &_grid {
+      &_item {
+        display: none;
+
+        &--active {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  @media(min-width: pxToRem(768)) {
+    &_title {
+      margin: pxToRem(100) 0 pxToRem(32);
+    }
+
+    &_grid {
+      @include flexContainer(flex, null, null, space-between, null, null);
+      max-width: pxToRem(900);
+      padding: 0 pxToRem(10);
+
+      &_item {
+        @include flexContainer(flex, null, null, null, null, null);
+        @include calc(width, '(100% - #{pxToRem(40)}) / 3', null);
+      }
+    }
+  }
+
+  @media(min-width: pxToRem(1024)) {}
+}

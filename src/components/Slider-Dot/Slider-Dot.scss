@@ -1,0 +1,12 @@
+@import '../../css/_utilities/_imports';
+
+.sliderDot {
+  background-color: $color-aqua;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0);
+  display: inline-block;
+  height: pxToRem(12);
+  margin: 0 pxToRem(8);
+  overflow: hidden;
+  width: pxToRem(12);
+}
