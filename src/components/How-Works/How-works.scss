@@ -1,12 +1,6 @@
 @import '../../css/_utilities/_imports';
 
 .howWorks {
-  &_title {
-    font-size: pxToRem(24);
-    font-weight: 700;
-    margin: pxToRem(32) 0 pxToRem(16);
-  }
-
   &_grid {
     margin: 0 auto;
     max-width: pxToRem(300);
@@ -23,21 +17,35 @@
 
   @media(max-width: pxToRem(767)) {
     &_grid {
+      min-height: pxToRem(240);
+      position: relative;
+      overflow: hidden;
+
       &_item {
-        display: none;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        @include transform(scaleX(0));
+        @include transformOrigin(center);
+        transition: transform .15s ease-in;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+
+        &:not(attr[class~="--active"]) {
+          transition: transform .15s .20s ease-in-out;
+          @include transformOrigin(right);
+        }
 
         &--active {
-          display: inline-block;
+          @include transform(scaleX(1));
+          visibility: visible;
         }
       }
     }
   }
 
   @media(min-width: pxToRem(768)) {
-    &_title {
-      margin: pxToRem(100) 0 pxToRem(32);
-    }
-
     &_grid {
       @include flexContainer(flex, null, null, space-between, null, null);
       max-width: pxToRem(900);
@@ -51,4 +59,17 @@
   }
 
   @media(min-width: pxToRem(1024)) {}
+}
+
+.sliderDots {
+  &_grid {
+    margin-top: pxToRem(20);
+  }
+
+  @media(min-width: pxToRem(768)) {
+    &_grid {
+      margin-top: pxToRem(20);
+      display: none;
+    }
+  }
 }

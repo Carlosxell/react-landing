@@ -1,0 +1,64 @@
+@import '../../css/_utilities/_imports';
+
+.partner {
+  display: inline-block;
+  max-width: pxToRem(236);
+  margin: pxToRem(16) 0;
+
+  &_wrap {
+    display: inline-block;
+    height: pxToRem(120);
+    position: relative;
+    width: pxToRem(120);
+
+    &_img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &_icon {
+      border-radius: 50%;
+      bottom: 0;
+      height: pxToRem(32);
+      padding: pxToRem(8);
+      position: absolute;
+      right: 0;
+      width: pxToRem(32);
+    }
+  }
+
+  &_content {
+    padding: 0 pxToRem(4);
+
+    &_title {
+      font-size: pxToRem(14);
+      font-weight: 700;
+      margin: pxToRem(12) 0;
+    }
+
+    &_desc {
+      font-size: pxToRem(14);
+      font-weight: 300;
+      line-height: pxToRem(14);
+    }
+  }
+}
+
+.icon {
+  &--red {
+    background-color: $color-lightRed;
+  }
+
+  &--aqua {
+    background-color: $color-aqua;
+  }
+
+  &--yellow {
+    background-color: $color-yellowishOrange;
+  }
+
+  &--cornFlower {
+    background-color: $color-cornFlower;
+  }
+}

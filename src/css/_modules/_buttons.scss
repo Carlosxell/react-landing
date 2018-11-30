@@ -9,7 +9,8 @@
 
   &--log,
   &--call,
-  &--signUp {
+  &--signUp,
+  &--partners {
     @extend .btn;
   }
 
@@ -32,5 +33,12 @@
 
   &--signUp {
     border: pxToRem(2) solid $color-white;
+  }
+
+  &--partners {
+    border: pxToRem(2) solid $color-lightRed;
+    background-color: transparent;
+    color: $color-lightRed;
+    font-weight: 600;
   }
 }

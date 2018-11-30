@@ -15,8 +15,8 @@ class BoxA extends Component {
 
         <figcaption className="boxA_content">
           <span className="boxA_btn">{ this.props.dataBase.btnText }</span>
-          <h3>{ this.props.dataBase.title }</h3>
-          <p>{ this.props.dataBase.description }</p>
+          <h3 className="boxA_content_title">{ this.props.dataBase.title }</h3>
+          <p className="boxA_content_description">{ this.props.dataBase.description }</p>
         </figcaption>
       </figure>
     );

@@ -6,7 +6,8 @@ import './Slider-Dot.scss';
 class SliderDot extends Component {
   render() {
     return (
-      <span className="sliderDot"> { this.props.dotValue } </span>
+      <span className={ "sliderDot" + ( this.props.countValue === this.props.dotId ? '--active' : '' ) }
+            onClick={ this.props.onClick }> { this.props.countValue } </span>
     );
   }
 }

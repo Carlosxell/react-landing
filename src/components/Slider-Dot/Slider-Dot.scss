@@ -4,9 +4,17 @@
   background-color: $color-aqua;
   border-radius: 50%;
   color: rgba(255, 255, 255, 0);
+  cursor: pointer;
   display: inline-block;
   height: pxToRem(12);
   margin: 0 pxToRem(8);
   overflow: hidden;
+  transition: border-color .15s ease-in-out, background-color .15s ease-in-out;
   width: pxToRem(12);
+
+  &--active {
+    @extend .sliderDot;
+    background-color: rgba($color-lightRed, .9);
+    border: pxToRem(1) solid rgba($color-black, .7);
+  }
 }

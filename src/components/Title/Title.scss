@@ -1,0 +1,11 @@
+@import '../../css/_utilities/_imports';
+
+.title {
+  font-size: pxToRem(24);
+  font-weight: 700;
+  margin: pxToRem(32) 0 pxToRem(16);
+
+  @media(min-width: pxToRem(768)) {
+    margin: pxToRem(100) 0 pxToRem(32);
+  }
+}

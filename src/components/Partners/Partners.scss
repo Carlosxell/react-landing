@@ -1,0 +1,27 @@
+@import '../../css/_utilities/_imports';
+
+.partners {
+  &_grid {
+    margin: 0 auto;
+    max-width: pxToRem(1000);
+    padding: 0 pxToRem(10);
+  }
+
+  @media(min-width: pxToRem(667)) {
+    &_grid {
+      @include flexContainer(flex, null, null, space-between, null, null);
+
+      &_item {
+        width: 50%;
+      }
+    }
+  }
+
+  @media(min-width: pxToRem(1024)) {
+    &_grid {
+      &_item {
+        width: 25%;
+      }
+    }
+  }
+}

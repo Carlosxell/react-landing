@@ -33,6 +33,17 @@
     position: absolute;
     right: 0;
     text-align: left;
+
+    &_title {
+      font-size: pxToEm(28);
+      font-weight: 700;
+      line-height: pxToRem(28);
+    }
+
+    &_description {
+      font-size: pxToRem(14);
+      font-weight: 300;
+    }
   }
 
   &_btn {

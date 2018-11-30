@@ -3,25 +3,25 @@ import './How-works.scss';
 
 // Components
 import BoxA from '../BoxA/BoxA';
+import Title from '../Title/Title';
 import howWorksData from "../../values/How-works-data";
 import SliderDot from "../Slider-Dot/Slider-Dot";
 
 class HowWorks extends Component {
-  changeCount = (value) => {
-    console.info(value, 'teste');
+  state = {
+    count: 1
+  };
 
+  changeCount = (value) => {
     this.setState({
       count: value
     });
-  };
-  state = {
-    count: 1
   };
 
   render() {
     return (
       <div className="howWorks">
-        <h2 className="howWorks_title">How Dreamshare</h2>
+        <Title text={ "How Dreamshare" } />
 
         <div className="howWorks_grid">{ howWorksData.map((result) => (
           <div className={ "howWorks_grid_item" + (this.state.count === result.id ? '--active' : '')}
@@ -32,7 +32,10 @@ class HowWorks extends Component {
 
         <div className="sliderDots_grid">
           { howWorksData.map((result) =>
-            ( <SliderDot key={ result.id } dotValue={ result.id } onClick={ () => this.changeCount(result.id) } /> )
+            ( <SliderDot countValue={ this.state.count }
+                         dotId={ result.id }
+                         key={ result.id }
+                         onClick={ () => this.changeCount(result.id) } /> )
           ) }
         </div>
       </div>
